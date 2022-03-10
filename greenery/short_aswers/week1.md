@@ -27,7 +27,7 @@ select avg(orders_number) from order_per_hour
 ```
 
 ## 3 - On average, how long does an order take from being placed to being delivered?
-Answer: **3 days, 21 hours and 24 minutes (~ 94h)**
+Answer: **3 days, 21 hours and 24 minutes**
 
 Query:
 ``` sql
@@ -66,7 +66,7 @@ group by 1
 ```
 
 ### 5 - On average, how many unique sessions do we have per hour?
-Answer: **7.33**
+Answer: **16.33**
 
 Query:
 ``` sql
