@@ -5,6 +5,7 @@ models:
     description: Table containing the addresses of the users
     columns:
       - name: address_id
+        description: this is the address id
         tests:
           - not_null
           - unique

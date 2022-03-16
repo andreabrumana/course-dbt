@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: dim_users
+    description: Table containing the users registred to Greenery
+
+  - name: fct_orders
+    description: Table containing the orders done
+

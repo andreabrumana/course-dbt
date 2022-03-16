@@ -64,7 +64,7 @@ group by 1
 ```
 
 ## On average, how many unique sessions do we have per hour?
-Answer: **7.33**
+Answer: **16.33**
 
 Query:
 ``` sql
