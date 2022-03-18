@@ -7,7 +7,7 @@
 with promos as (
     select
       promo_id,
-      discount as discount_percentage,
+      discount as promo_discount,
       status as promo_status
     from {{ source('greenery', 'promos') }}
 )

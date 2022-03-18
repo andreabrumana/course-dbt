@@ -55,7 +55,7 @@ models:
           - relationships:
               to: ref('stg_products')
               field: product_id
-      - name: quantity
+      - name: product_quantity
         tests:
           - positive_values
 
@@ -67,6 +67,10 @@ models:
           - not_null
           - unique
       - name: promo_id
+        tests:
+          - relationships:
+              to: ref('stg_promos')
+              field: promo_id
       - name: user_id
         tests:
           - not_null
@@ -80,6 +84,8 @@ models:
               to: ref('stg_addresses')
               field: address_id
       - name: created_at
+        tests:
+          - not_null
       - name: order_cost
         tests:
           - not_null
@@ -91,6 +97,7 @@ models:
       - name: order_total
         tests:
           - not_null
+          - positive_values
       - name: tracking_id
       - name: shipping_service
       - name: estimated_delivery_at
@@ -109,7 +116,7 @@ models:
         tests:
           - not_null
           - positive_values
-      - name: inventory
+      - name: product_inventory
         tests:
           - not_null
           - positive_values
@@ -125,7 +132,7 @@ models:
         tests:
           - not_null
           - positive_values
-      - name: status
+      - name: promo_status
         tests:
           - accepted_values:
               values: ['active', 'inactive']
@@ -152,3 +159,6 @@ models:
       - name: address_id
         tests:
           - not_null
+          - relationships:
+              to: ref('stg_adress')
+              field: address_id

@@ -12,10 +12,16 @@ with users as (
       first_name || last_name as full_name,
       email,
       phone_number,
-      created_at_utc,
-      updated_at_utc,
-      address_id
-    from {{ ref('stg_users') }}
+      created_at,
+      updated_at,
+      b.address_id,
+      address,
+      zipcode,
+      state,
+      country
+    from {{ ref('stg_users') }} a
+    join {{ ref('stg_addresses')}} b
+      on a.address_id = b.address_id
 )
 
 select *

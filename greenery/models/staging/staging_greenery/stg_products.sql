@@ -8,7 +8,7 @@ with products as (
     select
       product_id,
       name as product_name,
-      price as price_usd,
+      price,
       inventory as product_inventory
     from {{ source('greenery', 'products') }}
 )
