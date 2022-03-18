@@ -3,7 +3,83 @@ version: 2
 models:
   - name: dim_users
     description: Table containing the users registred to Greenery
+    columns:
+      - name: user_id
+        description: Unique id of the user
+      - name: first_name
+        description: Name of the user
+      - name: last_name
+        description: Surname of the user
+      - name: full_name
+        description: Full name of the user
+      - name: email
+        description: Email of the user
+      - name: phone_number
+        description: Phone number of the user
+      - name: created_at
+        description: Time at ehich the user was created
+      - name: updated_at
+        description: Time at which the user was updated
+      - name: address_id
+        description: Unique id of the address
+      - name: address
+        description: Address of the user (street, city)
+      - name: country
+        description: Country of the user
+      - name: state
+        description: State of the user
+      - name: zipcode
+        description: zipcode of the user
 
   - name: fct_orders
-    description: Table containing the orders done
+    description: Table containing all orders made on Greenery
+    columns:
+      - name: order_id
+        description: unique id of the order
+      - name: user_id
+        description: unique id of the user
+      - name: promo_id
+        description: id of the promo applied
+      - name: address_id
+        description: unique id of the address
+      - name: created_at
+        description: when the order as placed
+      - name: order_cost
+        description: products cost
+      - name: shipping_cost
+        description: ship cost
+      - name: order_total
+        description: total spent
+      - name: tracking_id
+        description: unique tracking of the order
+      - name: shipping_service
+        description: carrier used
+      - name: estimated_delivery_at
+        description: estimated delivery of the order
+      - name: delivered_at
+        description: actual delivery of the order
+      - name: status
+        description: status of the order
+      - name: delivery_time
+        description: time required to deliver the item
+      - name: on_time
+        description: true if the order is on time
+      - name: count_unique_products
+        description: distinct product ordered
+      - name: order_quantity
+        description: total items ordered
+      - name: promo_discount
+        description: discount applied by the promo
+      - name: promo_status
+        description: status of the promo
+
+  - name: dim_products
+    description: Table containing information on products
+    columns:
+      - name: product_id
+        description: Unique id of the product
+      - name: product_name
+        description: Name of the product
+      - name: price
+        description: Price of the product
 

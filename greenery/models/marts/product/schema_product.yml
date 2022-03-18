@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: fct_sessions
+    description: Table containing information about the sessions.
+    columns:
+      - name: session_id
+        description: this is the address id
+      - name: user_id
+        description: this is the user id
+      - name: started_at
+        description: time when the session has a first event registered
+      - name: finished_at
+        description: time when the session has a last event registered
+      - name: session_duration_min
+        description: duration in minutes of the session (finished_at - started_at)
+
+  - name: fct_page_views
+    description: Table containing information about page views.
+    columns:
+      - name: page_view_id
+        description: this is the event id associated at page view
+      - name: page_url
+        description: this is the page url
+      - name: session_id
+        description: this is the session id
+      - name: user_id
+        description: this is the user id
+      - name: viewed_at
+        description: time of the page view

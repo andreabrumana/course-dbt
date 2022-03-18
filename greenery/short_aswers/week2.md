@@ -65,17 +65,21 @@ If I had more data, I would like to have information about:
 ### Marketing
 - **intermediate**
     - `int_monthly_orders`: intermediate model that has the count of monhtly order by users
-- `dim_country_inhabitants`: a table that shows the number of users by country
+- `dim_country_users`: a table that shows the number of users by country/state
 - `fct_users_orders`: this table stores different order metrics at user level that relates with CX
 ### Product
-- **intermediate**
-- `dim_users`:
+- `fct_page_views`: this table contains information about page views
+- `fct_sessions`: this table contains information about sessions duration
 
 ---
 # (Part 2) Tests 
 ---
 ## 1 - What assumptions are you making about each model? (i.e. why are you adding each test?)
-
+In staging models, I tested 
+- uniqueness and existence (not_null) of primary keys
+- positivy for numeric values
+- existence for created_at (when available)
+- positivity, for price, quantity, etc.
 
 
 ## 2 - Did you find any “bad” data as you added and ran tests on your models? How did you go about either cleaning the data in the dbt model or adjusting your assumptions/tests?

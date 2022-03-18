@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: dim_country_users
+    description: Table containing information number of users per country.
+    columns:
+      - name: country
+        description: country of the user
+      - name: state
+        description: state of the user
+      - name: num_users
+        description: num of user per country/state
+
+  - name: fct_users_orders
+    description: Table containing information about order metrics at user level that relates with CX.
+    columns:
+      - name: user_id
+        description: unique identifier for the user
+      - name: full_name
+        description: Name and Surname of the user
+      - name: email
+        description: email address of the user
+      - name: phone_number
+        description: phone number of the user
+      - name: created_at
+        description: time at which user was created
+      - name: updated_at
+        description: time at ehich user was last updated
+      - name: address
+        description: adressof the user (street and city)
+      - name: zipcode
+        description: zipcode of the user
+      - name: state
+        description: state of the user
+      - name: country
+        description: country of the user  
+      - name: user_tenure
+        description: time since the creation of the user
+      - name: total_orders
+        description: total order made by the user in all history
+      - name: on_time_orders_ratio
+        description: share of orders delivered on time
+      - name: avg_monthly_orders
+        description: avg of monthly orders made by the user
+      - name: avg_delivery_time
+        description:  avg delivery time       
