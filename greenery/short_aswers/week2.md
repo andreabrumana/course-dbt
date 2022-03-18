@@ -71,7 +71,7 @@ If I had more data, I would like to have information about:
 - `fct_page_views`: this table contains information about page views
 - `fct_sessions`: this table contains information about sessions duration
 
-# 4 - Use the dbt docs to visualize your model DAGs to ensure the model layers make sense 
+## 4 - Use the dbt docs to visualize your model DAGs to ensure the model layers make sense 
 ![DAG](dbt-dag-week2.png)
 
 ---
