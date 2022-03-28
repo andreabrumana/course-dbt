@@ -24,9 +24,9 @@ orders as (
       promo_id,
       address_id,
       created_at,
-      order_cost,
-      shipping_cost,
-      order_total,
+      round(order_cost::numeric,2) as order_cost_usd,
+      round(shipping_cost::numeric,2) as shipping_cost_usd,
+      round(order_total::numeric,2) as order_total_usd,
       tracking_id,
       shipping_service,
       estimated_delivery_at,
@@ -41,7 +41,7 @@ select
   orders.*,
   count_unique_products,
   order_quantity,
-  promo_discount,
+  coalesce(promo_discount,0) as promo_discount_usd,
   promo_status
 from orders
 left join order_items

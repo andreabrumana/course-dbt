@@ -33,6 +33,9 @@ models:
 
   - name: fct_orders
     description: Table containing all orders made on Greenery
+    tests: 
+      - dbt_utils.expression_is_true:
+         expression: "order_total_usd = order_cost_usd + shipping_cost_usd - promo_discount_usd"
     columns:
       - name: order_id
         description: unique id of the order
@@ -44,11 +47,11 @@ models:
         description: unique id of the address
       - name: created_at
         description: when the order as placed
-      - name: order_cost
+      - name: order_cost_usd
         description: products cost
-      - name: shipping_cost
+      - name: shipping_cost_usd
         description: ship cost
-      - name: order_total
+      - name: order_total_usd
         description: total spent
       - name: tracking_id
         description: unique tracking of the order
@@ -68,7 +71,7 @@ models:
         description: distinct product ordered
       - name: order_quantity
         description: total items ordered
-      - name: promo_discount
+      - name: promo_discount_usd
         description: discount applied by the promo
       - name: promo_status
         description: status of the promo

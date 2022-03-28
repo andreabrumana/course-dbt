@@ -1,0 +1,12 @@
+version: 2
+
+macros:
+  - name: agg_by_col
+    description: Aggregates for each distinct value in a specified column
+    docs:
+      show: true
+    arguments:
+      - name: table_name
+        description: The name of the table containing the column you wish to aggregate by
+      - name: column_name
+        description: The name of the column you wish to aggregate by 
